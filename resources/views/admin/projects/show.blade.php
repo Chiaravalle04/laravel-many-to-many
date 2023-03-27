@@ -36,15 +36,19 @@
                         
                     @endif
 
-                    @if ($technologies->name)
-                        
-                        <p><b>Tipo:</b> {{ $technologies->name }}</p>
+                    @foreach ($technologies as $technology)
 
-                    @else
+                        @if ($technology->name)
+                            
+                            <p><b>Tipo:</b> {{ $technology->name }}</p>
 
-                        <p><b>Tipo:</b> Nessuno</p>
+                        @else
+
+                            <p><b>Tipo:</b> Nessuno</p>
+                            
+                        @endif
                         
-                    @endif
+                    @endforeach
 
                     <div>
 
