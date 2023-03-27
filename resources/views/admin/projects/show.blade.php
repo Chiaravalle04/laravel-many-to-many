@@ -36,6 +36,15 @@
                         
                     @endif
 
+                    @if ($technologies->name)
+                        
+                        <p><b>Tipo:</b> {{ $technologies->name }}</p>
+
+                    @else
+
+                        <p><b>Tipo:</b> Nessuno</p>
+                        
+                    @endif
 
                     <div>
 

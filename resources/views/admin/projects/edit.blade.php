@@ -62,6 +62,29 @@
                             @endforeach
                         </select>
                     </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Tecnologie</label>
+                        @foreach ($technologies as $technology)
+                            <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    name="technologies[]"
+                                    type="checkbox"
+                                    id="tag-{{ $technology->id }}"
+                                    value="{{ $technology->id }}"
+                                    @if (old('technologies') && is_array(old('technologies')) && count(old('technologies')) > 0)
+                                        {{ in_array($tag->id, old('technologies')) ? 'checked' : '' }}
+                                    @elseif($project->technologies->contains($technology))
+                                        checked
+                                    @endif>
+                                <label class="form-check-label" for="tag-{{ $technology->id }}">
+                                    {{ $technology->name }}
+                                </label>
+                            </div>
+                        @endforeach
+                    </div>
+
                     <div class="mb-3">
                         <label for="image" class="form-label">
                             Immagine progetto

@@ -29,7 +29,8 @@ class UpdateProjectRequest extends FormRequest
             'tags' => 'nullable|string|max:50',
             'image' => 'nullable|image|max:2048',
             'delete_image' => 'nullable',
-            'type_id' => 'nullable|exists:types,id'
+            'type_id' => 'nullable|exists:types,id',
+            'technologies' => 'nullable|array|exists:technologies,id'
         ];
     }
 }
